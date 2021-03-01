@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        // 1
+function getMaxDigit(number){
+    return Math.max(...Array.from(String(number), Number));
+}
+console.log(getMaxDigit(1234567));
+
+//2
+var exponent = function(a, n) 
+{
+   if (n === 0) { return 1}
+   else{ 
+       return a * exponent(a, n-1);
+   }
+};
+
+console.log(exponent(2, 5));
+
+//3
+function formatName(name){
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+}
+
+formatName("SOFIa");
+
+//4
+
+function getSalaryAfterTax(tax1, tax2, salaryWithoutTax){
+    return (salaryWithoutTax * (1-(tax1+tax2/100))).toFixed(2);
+}
+
+getSalaryAfterTax(18, 1.5, 1000)
+
+//5
+
+function getRandomNumber(number1, number2) {
+    return Math.random() * (number2 - number1) + number1;
+}
+
+//6
+
+function countLetter(letter, stringToCheck){
+return stringToCheck.split(letter).length - 1;
+}
+
+countLetter("s","string tocheck");
+
+//7
+
+function convertCurrency(amountOfMoney){
+
+    if(amountOfMoney.includes("$")){
+        return (parseFloat(amountOfMoney)*25).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'UAH',
+          });
+    }
+
+    if(amountOfMoney.includes("UAH")){
+        return (parseFloat(amountOfMoney)/25).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          });
+    }
+}
+
+convertCurrency("2500UAH");
+
+//8
+
+function getRandomPassword(lengthOfPassword = 8){
+    return Array.from({length: lengthOfPassword}, () => Math.floor(Math.random() * 9)).join('')
+}
+
+getRandomPassword()
+
+//9
+
+function deleteCertainCharacter(letter, stringWithIneligibleLetter){
+    return stringWithIneligibleLetter.replaceAll(letter,'')
+}
+
+deleteCertainCharacter('e', "ejjed")
+
+//10
+
+function ifEqual(str) {
+    return str === str.split("").reverse().join("")
+}
+console.log(ifEqual("emme"))
+
+//11
+
+function deleteDuplicateLetter(str){
+    {
+        var unique = '';
+        for (var i = 0; i < str.length; i++) {
+          if (str.lastIndexOf(str[i]) == str.indexOf(str[i])) {
+            unique += str[i];
+          }
+        }
+        return unique;
+}}
+
+deleteDuplicateLetter("pleeease");
+    </pre>
+</body>
+</html>
