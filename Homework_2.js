@@ -22,17 +22,25 @@ while (true) {
 }
 
 var includeEvenNumbers = confirm("Would you like to include even numbers due addition?");
-const isIncludedEvenNumbers = alert(includeEvenNumbers);
+var isIncludedEvenNumbers = alert(includeEvenNumbers);
 
-var resultSum=0;
+var biggerNum = Math.max(numN,numM);
+var smallerNum = Math.min(numN,numM);
 
-for (var i = numN; i <= numM; i++) {
-    if (isIncludedEvenNumbers) {
-        if (numN % 2 == 0) {
+var resultSum = 0;
+
+for (var i = smallerNum; i <= biggerNum; i++) {
+    if(i % 2 == 0){
+        if (includeEvenNumbers){
+            resultSum +=i;
+        }
+        else{
             continue;
         }
     }
-    resultSum += i;
+    else{
+        resultSum += i; 
+    }
 }
 
 console.log(resultSum);
