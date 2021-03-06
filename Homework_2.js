@@ -22,7 +22,6 @@ while (true) {
 }
 
 var includeEvenNumbers = confirm("Would you like to include even numbers due addition?");
-var isIncludedEvenNumbers = alert(includeEvenNumbers);
 
 var biggerNum = Math.max(numN,numM);
 var smallerNum = Math.min(numN,numM);
@@ -43,4 +42,5 @@ for (var i = smallerNum; i <= biggerNum; i++) {
     }
 }
 
+var result = alert(resultSum);
 console.log(resultSum);
