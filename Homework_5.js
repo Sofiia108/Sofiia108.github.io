@@ -8,7 +8,7 @@ function getRandomArray(length, min, max){
     //var randomArr = Array.from({length: length}, () => (Math.floor(Math.random() * (max - min)) + min)*length);
 
     //Включно з мінімальним і максимальним значенням:
-    var randomArr = Array.from({length: length}, () => (Math.floor(Math.random() * (max - min + 1)) + min)*length);
+    var randomArr = Array.from({length: length}, () => Math.floor(Math.random() * (max - min + 1)) + min);
     return randomArr; 
 }
 
@@ -131,6 +131,7 @@ function divideByThree(word){
 
 
 //10
+
 var combinationsArr = [];
 var usedChars = [];
 function generateCombinations(word){
@@ -142,7 +143,7 @@ function generateCombinations(word){
         ch = letters.splice(i, 1)[0];
         usedChars.push(ch);
         if (letters.length == 0) {
-            combinationsArr.push(usedChars.slice());
+            combinationsArr.push(usedChars.slice().join(''));
         }   
         generateCombinations(letters);
         letters.splice(i, 0, ch);
