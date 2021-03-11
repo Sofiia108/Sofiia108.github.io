@@ -25,7 +25,7 @@ var students = [{
 }];
 
 function getSubjects(studentName) {
-  const selectedStudent = students.filter(item => item.name === studentName);
+  const selectedStudent = students.filter(item => item.name == studentName);
   const subjects = selectedStudent[0].subjects;
   const subjectNames = Object.keys(subjects);
   const formatedNames = subjectNames.map(item =>  item.charAt(0).toUpperCase() + item.substr(1));
@@ -42,7 +42,7 @@ function getAverage(...numbers){
 }
 
 function getAverageMark(studentName){
-    const selectedStudent = students.filter(item => item.name === studentName);
+    const selectedStudent = students.filter(item => item.name == studentName);
     const subjects = selectedStudent[0].subjects;
     const marks = Object.values(subjects);
     let allMarks = [];
@@ -56,7 +56,7 @@ function getAverageMark(studentName){
 const avarageMark = getAverageMark(studentName);
 
 function getStudentInfo(studentName){
-    const selectedStudent = students.filter(item => item.name === studentName);
+    const selectedStudent = students.filter(item => item.name == studentName);
     const averageMark = getAverageMark(studentName);
     const student = { course: selectedStudent[0].course, 
         name: selectedStudent[0].name, 
