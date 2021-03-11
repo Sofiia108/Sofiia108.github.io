@@ -1,11 +1,11 @@
-var numberN;
-var numberM;
-var numN;
-var numM;
+let numberN;
+let numberM;
+let numN;
+let numM;
 
 while (true) {
     numberN = prompt("Enter number N", "");
-    var numN = parseInt(numberN);
+    numN = parseInt(numberN);
     if (numN.toString() === numberN) {
         break;
     }
@@ -14,19 +14,19 @@ while (true) {
 
 while (true) {
     numberM = prompt("Enter number M", "");
-    var numM = parseInt(numberM);
+    numM = parseInt(numberM);
     if (numM.toString() === numberM) {
         break;
     }
     else alert("It should be a number, darling!");
 }
 
-var includeEvenNumbers = confirm("Would you like to include even numbers due addition?");
+const includeEvenNumbers = confirm("Would you like to include even numbers due addition?");
 
-var biggerNum = Math.max(numN,numM);
-var smallerNum = Math.min(numN,numM);
+const biggerNum = Math.max(numN,numM);
+const smallerNum = Math.min(numN,numM);
 
-var resultSum = 0;
+let resultSum = 0;
 
 for (var i = smallerNum; i <= biggerNum; i++) {
     if(i % 2 == 0){
@@ -42,5 +42,5 @@ for (var i = smallerNum; i <= biggerNum; i++) {
     }
 }
 
-var result = alert(resultSum);
+const result = alert(resultSum);
 console.log(resultSum);
