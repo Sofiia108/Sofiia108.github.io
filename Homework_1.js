@@ -20,11 +20,17 @@ function result() {
 
     const isEvenNumSumOfCastedPrices = sumOfParsedToIntPrices % 2 == 0;
 
-    const changeFrom500UAH = (500 - sumOfPrices).toFixed(2);
+    const sumWithoutChange = 500;
+
+    const changeFrom500UAH = (sumWithoutChange - sumOfPrices).toFixed(2);
 
     const middlePrice = (sumOfPrices / prices.size).toFixed(2);
 
-    const randomDiscount = Math.round(Math.random() * 101);
+    const maxDiscount = 100;
+
+    const minDiscount = 0;
+
+    const randomDiscount = Math.floor(Math.random() * (maxDiscount - minDiscount + 1)) + minDiscount;
 
     const price1WithDiscount = parseInt(prices.get('price1')) * (100 - randomDiscount) / 100;
 
