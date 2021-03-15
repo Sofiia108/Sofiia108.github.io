@@ -44,3 +44,6 @@ console.log(`Функція 1: ${getMyTaxes.call(ukraine, 1780).toFixed(2)}
 Функція 3: ${getTotalTaxes.call(ukraine).toFixed(2)}
 Функція 4: ${getMySalary(ukraine)}`);
 
+setTimeout(getMySalary(ukraine), 10000);
+setTimeout(getMySalary(latvia), 10000);
+setTimeout(getMySalary(litva), 10000);
