@@ -16,30 +16,30 @@ function getPower(number, power)
 
 //3
 function formatName(name){
-    let result = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    const result = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
     return result;
 }
 
 
 //4
 function getSalaryAfterTax(tax1, tax2, salaryWithoutTax){
-    var taxFirst = tax1;
-    var taxSecond = tax2;
-    var notTaxedSalary = salaryWithoutTax;
+    const taxFirst = tax1;
+    const taxSecond = tax2;
+    const notTaxedSalary = salaryWithoutTax;
     return (notTaxedSalary * (1-((taxFirst+taxSecond)/100))).toFixed(2);
 }
 
 
 //5
 function getRandomNumber(number1, number2) {
-    let result = (Math.random() * (number2 - number1) + number1).toFixed(0);
+    const result = (Math.random() * (number2 - number1) + number1).toFixed(0);
     return (result);
 }
 
 
 //6
 function countLetter(letter, stringToCheck){
-    let character = letter;
+    const character = letter;
     let strToCheck = stringToCheck;
     return strToCheck.split(character).length - 1;
 }
@@ -48,7 +48,7 @@ function countLetter(letter, stringToCheck){
 //7
 function convertCurrency(quantityOfMoney){
 
-    let amountOfMoney = quantityOfMoney;
+    const amountOfMoney = quantityOfMoney;
     if(amountOfMoney.includes("$")){
     return (parseFloat(amountOfMoney)*25).toLocaleString('en-US', {
             style: 'currency',
@@ -68,31 +68,31 @@ function convertCurrency(quantityOfMoney){
 
 //8
 function getRandomPassword(passwordLength = 8){
-    var lengthOfPassword = passwordLength;
+    const lengthOfPassword = passwordLength;
     return Array.from({length: lengthOfPassword}, () => Math.floor(Math.random() * 9)).join('')
 }
 
 
 //9
 function deleteCertainCharacter(character, strWithIneligibleLetter){
-    let letter = character;
-    let stringWithIneligibleLetter = strWithIneligibleLetter
-    return stringWithIneligibleLetter.replaceAll(letter,'');
+    const result = strWithIneligibleLetter.replaceAll(character,'');
+    return result;
 }
 
 
 //10
 function isEqual(anyString) {
-    let str = anyString;
+    const str = anyString;
     return str === str.split("").reverse().join("")
 }
 
 
 //11
 function deleteDuplicateLetter(anyString){
-        var str = anyString;
-        var unique = '';
-        for (var i = 0; i < str.length; i++) {
+
+        const str = anyString;
+        let unique = '';
+        for (let i = 0; i < str.length; i++) {
             if (str.lastIndexOf(str[i]) == str.indexOf(str[i])) {
                 unique += str[i];
             }
