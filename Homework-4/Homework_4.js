@@ -7,8 +7,8 @@ var girls = ["Олена", "Іра", "Світлана"];
 
   
 function makePairs(array1, array2) {
-    var pairs = [];
-    for (var i = 0; i < array1.length; i++) {
+    let pairs = [];
+    for (let i = 0; i < array1.length; i++) {
         pairs.push([array1[i], array2[i]]);
     }
     return pairs;
@@ -25,18 +25,18 @@ function concatPairs(pairs) {
 
 
 function getPairs(students, themes) {
-    let boys = [students[0], students[1], students[4]];
-    let girls = [students[2], students[3], students[5]];
-    let pairs = makePairs(boys, girls);
-    let concatenatedPairs = concatPairs(pairs);
-    let pairsWithSubjects = makePairs(concatenatedPairs, themes);
+    const boys = [students[0], students[1], students[4]];
+    const girls = [students[2], students[3], students[5]];
+    const pairs = makePairs(boys, girls);
+    const concatenatedPairs = concatPairs(pairs);
+    const pairsWithSubjects = makePairs(concatenatedPairs, themes);
     return pairsWithSubjects;
 }
 
 
 function getRandomMarks(length){
-    var randomMarks = [];
-    for (var i = 0; i < length; i++) {
+    let randomMarks = [];
+    for (let i = 0; i < length; i++) {
         randomMarks.push(Math.floor(Math.random() * 6));
     }
     return randomMarks;
@@ -44,23 +44,22 @@ function getRandomMarks(length){
 
 function getPairsWithRandomMarks(studentsWithSubjects, randomMarks){
  
-    var result = [];
-    for(var i = 0; i < studentsWithSubjects.length; i++){
+    let result = [];
+    for(let i = 0; i < studentsWithSubjects.length; i++){
         result[i] = [...studentsWithSubjects[i], randomMarks[i]]; 
-        
     }
     return result;      
 }
 
-let pairs = makePairs(boys, girls);
+const pairs = makePairs(boys, girls);
 console.log(pairs);
 
-let pairsWithSubjects = getPairs(students, themes);
+const pairsWithSubjects = getPairs(students, themes);
 console.log(pairsWithSubjects);
 
-let studentsWithMarks = makePairs(students, marks);
+const studentsWithMarks = makePairs(students, marks);
 console.log(studentsWithMarks);
 
-let randomMarks = getRandomMarks(marks.length);      
-let pairsWithRandomMarks = getPairsWithRandomMarks(pairsWithSubjects, randomMarks);
+const randomMarks = getRandomMarks(marks.length);      
+const pairsWithRandomMarks = getPairsWithRandomMarks(pairsWithSubjects, randomMarks);
 console.log(pairsWithRandomMarks);
