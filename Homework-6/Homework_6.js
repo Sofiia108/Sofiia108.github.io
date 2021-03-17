@@ -1,4 +1,4 @@
-var students = [{
+const students = [{
   name: "Tanya",
   course: 3,
   subjects: {
