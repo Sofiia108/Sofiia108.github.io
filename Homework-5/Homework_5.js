@@ -1,14 +1,14 @@
 //1
-function getRandomArray(length, min, max){
+function getRandomArray(length, minValue, maxValue){
 
-    var min = Math.ceil(min);
-    var max = Math.floor(max);
+    const min = Math.ceil(minValue);
+    const max = Math.floor(maxValue);
 
     //Включно з мінімальним та виключаючи максимальне значення:
     //var randomArr = Array.from({length: length}, () => (Math.floor(Math.random() * (max - min)) + min)*length);
 
     //Включно з мінімальним і максимальним значенням:
-    var randomArr = Array.from({length: length}, () => Math.floor(Math.random() * (max - min + 1)) + min);
+    const randomArr = Array.from({length: length}, () => Math.floor(Math.random() * (maxValue - min + 1)) + min);
     return randomArr; 
 }
 
@@ -16,11 +16,12 @@ function getRandomArray(length, min, max){
 function skipNotIntegers(element, index, target){
     return Number.isInteger(element);
 }
+
 //2
 function getModa(...numbers){
     
-    var modes = [], count = [], i, number, maxIndex = 0;
-    var onlyIntegers = numbers.filter(skipNotIntegers);
+    let modes = [], count = [], i, number, maxIndex = 0;
+    const onlyIntegers = numbers.filter(skipNotIntegers);
 
     for (i = 0; i < onlyIntegers.length; i += 1) {
         number = onlyIntegers[i];
@@ -43,8 +44,8 @@ function getModa(...numbers){
 
 //3
 function getAverage(...numbers){
-    var onlyIntegers = numbers.filter(skipNotIntegers);
-    var avarage = onlyIntegers.reduce((acc, val) => acc + val, 0) / onlyIntegers.length;
+    const onlyIntegers = numbers.filter(skipNotIntegers);
+    const avarage = onlyIntegers.reduce((acc, val) => acc + val, 0) / onlyIntegers.length;
     return avarage;
 }
 
@@ -52,8 +53,8 @@ function getAverage(...numbers){
 //4
 function getMedian(...numbers) {
 
-    var onlyIntegers = numbers.filter(skipNotIntegers);
-    var median = 0, numsLen = onlyIntegers.length;
+    const onlyIntegers = numbers.filter(skipNotIntegers);
+    let median = 0, numsLen = onlyIntegers.length;
     onlyIntegers.sort();
  
     if (numsLen % 2 === 0) {
@@ -69,15 +70,15 @@ function getMedian(...numbers) {
 
 //5
 function filterEvenNumbers(...numbers) {
-    var onlyEvenNumbers = numbers.filter(x => x % 2 === 0);
+    const onlyEvenNumbers = numbers.filter(x => x % 2 === 0);
     return onlyEvenNumbers;
 }
 
 
 //6
 function countPositiveNumbers(...numbers){
-    var onlyPositiveNumbers = numbers.filter(x => x > 0);
-    var sumOfPositiveNumbers = onlyPositiveNumbers.reduce((acc, val) => acc + val, 0);
+    const onlyPositiveNumbers = numbers.filter(x => x > 0);
+    const sumOfPositiveNumbers = onlyPositiveNumbers.reduce((acc, val) => acc + val, 0);
     return sumOfPositiveNumbers;
 }
 
@@ -85,7 +86,7 @@ function countPositiveNumbers(...numbers){
 
 //7
 function getDividedByFive(...numbers){
-    var dividedByFive = numbers.filter(x => x % 5 === 0);
+    const dividedByFive = numbers.filter(x => x % 5 === 0);
     return dividedByFive;
 }
 
@@ -93,14 +94,13 @@ function getDividedByFive(...numbers){
 //8
 function replaceBadWords(string){
 
-    var strArr = string.toLowerCase().split(' ');
-    var badWords = ['fuck','shit'];
-    var filtered = [];
-    
+    const strArr = string.toLowerCase().split(' ');
+    const badWords = ['fuck','shit'];
+    let filtered = [];
    
-        for(var i = 0; i < strArr.length; i++){
-            var newStr = "";
-            for(var j = 0; j < badWords.length; j++){
+        for(let i = 0; i < strArr.length; i++){
+            let newStr = "";
+            for(let j = 0; j < badWords.length; j++){
             if (strArr[i].includes(badWords[j])){
                 newStr = strArr[i].replace(badWords[j],'****');
                 break;
@@ -116,12 +116,12 @@ function replaceBadWords(string){
 
 //9 
 function divideByThree(word){
-    var letters = word.toLowerCase().replaceAll(" ","");
+    const letters = word.toLowerCase().replaceAll(" ","");
 
     // використовуючи regex: https://regexr.com/
     // return letters.match(/.{1,3}/g)
 
-    var chunks = [];
+    let chunks = [];
 
     for (var i = 0 ; i < letters.length; i += 3) {
         chunks.push(letters.substring(i, i + 3));
@@ -132,12 +132,12 @@ function divideByThree(word){
 
 //10
 
-var combinationsArr = [];
-var usedChars = [];
+let combinationsArr = [];
+let usedChars = [];
 function generateCombinations(word){
 
-    var i, ch;
-    var letters = Array.from(word);
+    let i, ch;
+    const letters = Array.from(word);
 
     for (i = 0; i < letters.length; i++) {
         ch = letters.splice(i, 1)[0];
@@ -154,10 +154,10 @@ function generateCombinations(word){
 }
 
 
-var numbers = [1, 2, 3, 4.5, 5.6, 4.5, 4.5, 3, 4, 5, -2, -3, 10];
-var string1 = "Fucking holy shit";
-var string2 = "Divide  THIS string";
-var string3 = "man";
+const numbers = [1, 2, 3, 4.5, 5.6, 4.5, 4.5, 3, 4, 5, -2, -3, 10];
+const string1 = "Fucking holy shit";
+const string2 = "Divide  THIS string";
+const string3 = "man";
 
 
 console.log(`Функція 1: ${getRandomArray(3, 2, 6)}
