@@ -12,7 +12,8 @@ body {
     align-items: center;
 }
 
-button {
+button  {
+    all:unset;
     text-align: center;
     font-size: 20px;   
     background-color: rgba(223, 134, 141, 0.5);
