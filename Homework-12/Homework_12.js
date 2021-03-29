@@ -1,4 +1,4 @@
-function getPromice() {
+function getPromise() {
 
     return new Promise((resolve) => {
         setTimeout(() => { 
@@ -18,7 +18,7 @@ async function getRandomChinese(length)
         {  
             counter = 0;
             while (counter < length) {
-                arr.push(await getPromice());
+                arr.push(await getPromise());
                 counter++;
             }
             resolve();
