@@ -1,7 +1,10 @@
-
 const container = document.createElement('div');
 container.className = 'container';
 document.body.append(container);
+
+const contentContainer = document.createElement('div');
+contentContainer.className = 'content-Container';
+document.body.append(contentContainer);
 
 const buttonNames = ['character', 'next'];
 
@@ -13,31 +16,52 @@ for (let i = 0; i < 2; i++) {
     container.appendChild(button);
 }
 
-document.getElementsByClassName('next')[0].addEventListener('click', getCharacters);
+document.getElementsByClassName('character')[0].addEventListener('click', getCharacters);
 
-function getCharacters(){
-    
-    let result;
-    axios.get('https://swapi.dev/api/films/2/')
+function getCharacters() {
+
+    function htmlToElement(html) {
+
+        let template = document.createElement('template');
+        html = html.trim(); // Never return a text node of whitespace as the result
+        template.innerHTML = html;
+        return template.content.firstChild;
+    }
+
+    axios
+        .get('https://swapi.dev/api/films/2/')
         .then((res) => {
-            const { characters }  = res.data;  
-            return Promise.all(characters.map(item => axios.get(item))); 
-    })
-    .then((characters) => characters.map((name) => { 
-    
-        return result = {
-        Name : name.data.name,
-        Birth_year: name.data.birth_year,
-        Gender: name.data.gender}
-    }));
-    return result;
+            const { characters } = res.data;
+            return Promise.all(characters.map(item => axios.get(item)));
+        })
+        .then((characters) => {
+
+            let a = characters.map((item) => ({
+
+                Name: item.data.name,
+                Birth_year: item.data.birth_year,
+                Gender: item.data.gender
+            }))
+            a.forEach((item) => {
+                
+                let genderIcon;
+                if(item.Gender === 'male')  genderIcon = "♂"; 
+                else if(item.Gender === 'female')  genderIcon = "♀"; 
+                else genderIcon = "⚪";
+                let childStr = `<div> <img src="Pictures/${item.Name}.jpg";>
+                <p>${item.Name} ${genderIcon} </p>
+                <p>birth year: ${item.Birth_year} </p> </div>`;
+                contentContainer.appendChild(htmlToElement(childStr));    
+            })
+            
+        });
+
 }
 
 document.getElementsByClassName('next')[0].addEventListener('click', getPlanets);
 
 function getPlanets() {
 
-    window.location.assign('Planets.html');
 
     axios.get('https://swapi.dev/api/planets/')
         .then((res) => {
@@ -46,6 +70,13 @@ function getPlanets() {
             return Promise.all(results.map(item => item))
         })
         .then((results) => {
-            results.forEach(item => console.log(item.name))
-        });
+
+            let a = results.map((item) => ({
+                Name: item.name,   
+            }))
+
+            localStorage.setItem("Planet-names",JSON.stringify(a))
+            window.location.assign('Planets.html');
+        });  
 }
+    
