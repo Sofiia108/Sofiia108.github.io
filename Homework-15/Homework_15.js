@@ -28,38 +28,23 @@ idGenerator.next().value;
 idGenerator.next().value;
 idGenerator.next().value;
 
-class FontGenerator {
 
-    constructor(start) {
+function* fontRegulator(start) {
 
-        this.start = start;
+    let currentValue = start;
+    let step = 2;
+
+
+    while (true) {
+
+        console.log(currentValue);
+        const reply = yield currentValue;
+        if (reply == 'up') { currentValue += step; }
+        else if (reply == 'down') { currentValue -= step; }
     }
-
-    *generator() {
-
-        let currentValue = this.start;
-        let step = 2;
-
-
-        while (true) {
-            
-            console.log(currentValue);
-
-            const reply = yield currentValue;
-
-            if (reply == 'up') {currentValue += step;}
-
-            else if (reply == 'down') {currentValue -= step;}
-
-        }
-
-    };
-
 };
 
-const fontGenerator = new FontGenerator(14);
-
-let fontSize = fontGenerator.generator();
+const fontSize = fontRegulator(14);
 
 console.log("Task 2: ");
 fontSize.next().value;
@@ -67,31 +52,3 @@ fontSize.next('up').value;
 fontSize.next().value;
 fontSize.next('down').value;
 fontSize.next().value;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
