@@ -23,24 +23,29 @@ while (true) {
 
 const includeEvenNumbers = confirm("Would you like to include even numbers due addition?");
 
-const biggerNum = Math.max(numN,numM);
-const smallerNum = Math.min(numN,numM);
+function getResultSum(numN,numM,includeEvenNumbers) {
+    
+    const biggerNum = Math.max(numN, numM);
+    const smallerNum = Math.min(numN, numM);
 
-let resultSum = 0;
+    let resultSum = 0;
 
-for (var i = smallerNum; i <= biggerNum; i++) {
-    if(i % 2 == 0){
-        if (includeEvenNumbers){
-            resultSum +=i;
+    for (var i = smallerNum; i <= biggerNum; i++) {
+        if (i % 2 == 0) {
+            if (includeEvenNumbers) {
+                resultSum += i;
+            }
+            else {
+                continue;
+            }
         }
-        else{
-            continue;
+        else {
+            resultSum += i;
         }
     }
-    else{
-        resultSum += i; 
-    }
+    return resultSum;
 }
 
-const result = alert(resultSum);
-console.log(resultSum);
+const result = alert(getResultSum());
+console.log(getResultSum());
+export {getResultSum};

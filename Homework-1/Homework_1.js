@@ -63,7 +63,7 @@ function result() {
     
 }
 console.log(result())
-
+export {result}
 /*
 Інформація для перевіряючих осіб
 
