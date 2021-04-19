@@ -114,4 +114,5 @@ function deleteDuplicateLetter(anyString){
         Функція №10: ${isEqual("emme")} або ${isEqual("jkkklk")}
         Функція №11: ${deleteDuplicateLetter("amazzing")}`)
 
+export {getPower}
     
