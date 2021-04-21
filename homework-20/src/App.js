@@ -1,11 +1,12 @@
+import React from "react";
 import './App.css';
+import Countdown from "./components/Countdown";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>test</h1>
-    </div>
-  );
+export default function App() {
+
+    return (
+        <div className="App">
+            <Countdown seconds={15}/>
+        </div>
+    );
 }
-
-export default App;
