@@ -10,7 +10,6 @@ export default function Countdown( { initialSeconds } ) {
 
     let intervalRef = useRef();
 
-
     useEffect(() => {
         setPause(false);
         intervalRef.current = setInterval( initialTime.setSeconds(seconds-1) , 1000);

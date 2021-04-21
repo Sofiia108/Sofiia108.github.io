@@ -6,7 +6,7 @@ export default function App() {
 
     return (
         <div className="App">
-            <Countdown seconds={15}/>
+            <Countdown seconds={60}/>
         </div>
     );
 }
