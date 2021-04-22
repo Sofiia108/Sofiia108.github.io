@@ -1,6 +1,6 @@
 {
-  "homepage": "https://sofiia108.github.io/test-2/build/",
-  "name": "test-2",
+  "homepage": "https://sofiia108.github.io/homework-21/build/",
+  "name": "homework-21",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1"
   },

@@ -1,4 +1,4 @@
-.App {
+.App{
   text-align: center;
 }
 
@@ -13,15 +13,20 @@
   }
 }
 
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #eac2e2;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.navigation_menu {
+  list-style-type: none;
+  display: flex;
+  margin: 10px;
 }
 
 .App-link {
@@ -35,4 +40,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+li{
+  font-size: large;
+  margin: 20px;
+}
+
+img{
+  width: 220px;
+  height: 300px;
 }
