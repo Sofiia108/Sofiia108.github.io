@@ -6,7 +6,8 @@ export default function App() {
 
     return (
         <div className="App">
-            <Countdown seconds={60}/>
+            <Countdown initialSeconds={60} step={1}/>
+            <Countdown initialSeconds={3600} step={2}/>
         </div>
     );
 }
