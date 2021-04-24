@@ -6,7 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 let baseName = "";
-baseName = "lecture-21/build/";
+baseName = "/lecture-21/build";
 
 ReactDOM.render(
   <React.StrictMode>
