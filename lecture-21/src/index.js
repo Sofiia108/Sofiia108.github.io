@@ -5,9 +5,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let baseName = "";
+baseName = "sofiia108.github.io/lecture-21/build/";
+
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename={baseName}>
           <App />
       </BrowserRouter>
   </React.StrictMode>,

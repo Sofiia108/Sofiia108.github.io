@@ -10,7 +10,7 @@ export const  appRoutes = [
         component: HomePage
     },
     {
-        path: "/photo's",
+        path: "/photos",
         component: PhotosPage
     },
     {
