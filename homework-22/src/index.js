@@ -7,8 +7,8 @@ import reportWebVitals from "./reportWebVitals";
 const baseName = "/homework-22/build";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App basename={baseName}/>
+    <React.StrictMode basename={baseName}>
+        <App />
     </React.StrictMode>,
     document.getElementById('root')
 );
