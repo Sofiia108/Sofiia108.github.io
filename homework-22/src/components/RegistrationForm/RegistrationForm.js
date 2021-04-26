@@ -129,7 +129,6 @@ function RegistrationForm(props) {
                     <span className="loginText" onClick={() => redirectToLogin()}>Login here</span>
                 </div>
             </div>)
-        </div>
 }
 
 export default withRouter(RegistrationForm);
