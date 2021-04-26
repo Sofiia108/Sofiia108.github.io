@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from "./reportWebVitals";
+import {BrowserRouter} from "react-router-dom";
 
 const baseName = "/homework-22/build";
 
 ReactDOM.render(
-    <React.StrictMode basename={baseName}>
-        <App />
+    <React.StrictMode>
+        <BrowserRouter basename={baseName}>
+            <App />
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );
