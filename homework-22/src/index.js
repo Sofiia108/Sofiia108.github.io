@@ -4,12 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from "./reportWebVitals";
 
-let baseName = "";
-baseName = "/homework-22/build";
+const baseName = "/homework-22/build";
 
 ReactDOM.render(
     <React.StrictMode>
-        <App baseName={baseName}/>
+        <App basename={baseName}/>
     </React.StrictMode>,
     document.getElementById('root')
 );
