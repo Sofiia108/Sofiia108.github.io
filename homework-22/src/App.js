@@ -1,41 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+    BrowserRouter as Router,
+    Switch,
+    Route,
 } from "react-router-dom";
-import About from "./components/About";
-import Home from "./components/Home";
+import LoginForm from "./components/LoginForm";
+import RegistrationForm from "./components/RegistrationForm";
+import {Box, Container} from "@material-ui/core";
 
 let baseName = "";
 baseName = "/homework-22/build";
 
 function App() {
-  return (
-      <Router basename={baseName}>
-        <div>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-  );
+    return (
+        <Router basename={baseName}>
+                <Container>
+                    <Box pt={20}>
+                        <Switch>
+                            <Route path="/register">
+                                <RegistrationForm/>
+                            </Route>
+                            <Route path="/">
+                                <LoginForm/>
+                            </Route>
+                        </Switch>
+                    </Box>
+                </Container>
+        </Router>
+    );
 }
 
 export default App;
