@@ -32,7 +32,10 @@ function getCharacters() {
         .get('https://swapi.dev/api/films/2/')
         .then((res) => {
             const { characters } = res.data;
-            return Promise.all(characters.map(item => axios.get(item)));
+            return Promise.all(characters.map(item => {
+                let url = item.replace("http","https");
+                return axios.get(url);
+            }));
         })
         .then((characters) => {
 
