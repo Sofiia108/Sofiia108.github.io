@@ -44,7 +44,7 @@ class Contacts extends Component {
 
         this.setState({search: e.target.value}); 
         let input = e.target.value.toLowerCase();
-        let result = this.contacts.filter(contact => contact.lastName.toLowerCase().includes(input));
+        let result = this.contacts.filter(contact => contact.firstName.toLowerCase().includes(input) || contact.lastName.toLowerCase().includes(input));
         this.setState({filteredContacts: result});
        
     }
