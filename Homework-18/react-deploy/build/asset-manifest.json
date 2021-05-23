@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Homework-18/react-deploy/build/static/css/main.6e18bce7.chunk.css",
-    "main.js": "/Homework-18/react-deploy/build/static/js/main.fcd1d17f.chunk.js",
-    "main.js.map": "/Homework-18/react-deploy/build/static/js/main.fcd1d17f.chunk.js.map",
+    "main.js": "/Homework-18/react-deploy/build/static/js/main.b359fed9.chunk.js",
+    "main.js.map": "/Homework-18/react-deploy/build/static/js/main.b359fed9.chunk.js.map",
     "runtime-main.js": "/Homework-18/react-deploy/build/static/js/runtime-main.82369c9a.js",
     "runtime-main.js.map": "/Homework-18/react-deploy/build/static/js/runtime-main.82369c9a.js.map",
     "static/js/2.3baafe47.chunk.js": "/Homework-18/react-deploy/build/static/js/2.3baafe47.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.82369c9a.js",
     "static/js/2.3baafe47.chunk.js",
     "static/css/main.6e18bce7.chunk.css",
-    "static/js/main.fcd1d17f.chunk.js"
+    "static/js/main.b359fed9.chunk.js"
   ]
 }

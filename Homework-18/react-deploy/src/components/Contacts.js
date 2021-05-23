@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Contact from './Contact';
 import './Contacts.css'
+
 class Contacts extends Component {
 
     contacts = [{
@@ -35,26 +36,31 @@ class Contacts extends Component {
     }];
 
     state = {
-        filteredContacts : this.contacts,
-        search : ""
+        filteredContacts: this.contacts,
+        search: ""
     }
 
-    
+
     onSearch = (e) => {
 
-        this.setState({search: e.target.value}); 
-        let input = e.target.value.toLowerCase();
-        let result = this.contacts.filter(contact => contact.firstName.toLowerCase().includes(input) || contact.lastName.toLowerCase().includes(input));
+        this.setState({search: e.target.value});
+
+        let input = e.target.value.toLowerCase().replaceAll(/\s/g, '');
+        let result = this.contacts.filter(contact => {
+            let fullName = contact.firstName + contact.lastName;
+            let fullNameReversed = contact.lastName + contact.firstName;
+            return fullName.toLowerCase().includes(input) || fullNameReversed.toLowerCase().includes(input)
+            }
+        );
         this.setState({filteredContacts: result});
-       
     }
 
     render() {
         return (
             <div className="Contacts-container">
-                <input className="Contacts-input"value={this.state.search} onChange={this.onSearch}/>
-                {this.state.filteredContacts.map((contact, index) => 
-                <Contact {...contact} key={index}/>)}
+                <input className="Contacts-input" value={this.state.search} onChange={this.onSearch}/>
+                {this.state.filteredContacts.map((contact, index) =>
+                    <Contact {...contact} key={index}/>)}
             </div>
         )
     }
